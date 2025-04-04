@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livros</title>
+  </head>
+  <body>
+    <h1>Livros disponíveis</h1>
+
+    {% for livro in livros %}
+    <ul>
+      <li><strong>Título:</strong> {{ livro.titulo }}</li>
+      <li><strong>Autor:</strong> {{ livro.autor }}</li>
+      <li><strong>Páginas:</strong> {{ livro.paginas }}</li>
+    </ul>
+    <hr />
+    {% endfor %}
+    <a href="/criarlivro/">Criar novo livro</a>
+  </body>
+</html>
